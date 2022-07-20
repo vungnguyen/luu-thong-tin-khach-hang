@@ -60,3 +60,21 @@ connection.query(sqlSelect2, (err, results, fields) =>{
     console.log(results,'limit');
 
 })
+
+const sqlInsert = "INSERT INTO customer(name, address) VALUES('tuan','hai duong')";
+connection.query(sqlInsert, (err, results, fields) => {
+    if (err) throw err;
+    console.log(results,'1 record inserted');
+});
+
+const sqlUpdate = "UPDATE customer SET address = 'vl' WHERE name = 'abi'";
+connection.query(sqlUpdate, (err, results, fields) => {
+    if (err) throw err;
+    console.log(results);
+});
+
+const sqlUpdate2 = "UPDATE customer SET name = 'ha' WHERE address = 'hai duong'";
+connection.query(sqlUpdate2, (err, results, fields) => {
+    if (err) throw err;
+    console.log(results);
+})
