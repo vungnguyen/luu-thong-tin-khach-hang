@@ -44,3 +44,19 @@ const server = http.createServer(async (req, res) => {
 server.listen(3000, function () {
     console.log('server running at http://localhost:3000 ')
 });
+const sqlSelect = 'SELECT * FROM customer';
+connection.query(sqlSelect, (err, results, fields) => {
+    if (err) throw err;
+    console.log(results);
+})
+const sqlSelect1 = "SELECT * FROM customer WHERE address = 'vl' ";
+connection.query(sqlSelect1, (err, results, fields) => {
+    if (err) throw err;
+    console.log(results,'where');
+});
+const sqlSelect2 = "SELECT * FROM customer limit 3 ";
+connection.query(sqlSelect2, (err, results, fields) =>{
+    if (err) throw err;
+    console.log(results,'limit');
+
+})
